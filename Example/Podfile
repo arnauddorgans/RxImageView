@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RxImageView_Example' do
+  pod 'RxImageView', :path => '../'
+
+  target 'RxImageView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
