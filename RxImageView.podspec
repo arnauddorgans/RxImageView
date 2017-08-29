@@ -26,9 +26,9 @@ s.homepage         = 'https://github.com/Arnoymous/RxImageView'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = { 'Arnoymous' => 'ineox@me.com' }
 s.source           = { :git => 'https://github.com/Arnoymous/RxImageView.git', :tag => s.version.to_s }
-s.social_media_url = 'https://twitter.com/arnauddorgans
+s.social_media_url = 'https://twitter.com/arnauddorgans'
 
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '9.0'
 s.tvos.deployment_target = '9.0'
 
 s.source_files = 'RxImageView/Classes/**/*'
