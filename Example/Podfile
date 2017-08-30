@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'RxImageView_Example' do
   pod 'RxImageView', :path => '../'
+  pod 'PureLayout'
 
   target 'RxImageView_Tests' do
     inherit! :search_paths
