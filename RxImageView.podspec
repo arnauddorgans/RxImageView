@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'RxImageView'
-s.version          = '0.1.6'
+s.version          = '0.1.7'
 s.summary          = 'Reactive UIImageView extension with SDWebImage'
 
 # This description is used to generate tags and improve search results.
@@ -39,7 +39,7 @@ s.source_files = 'RxImageView/Classes/**/*'
 
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
-s.dependency 'SDWebImage', '~> 4.1.0'
-s.dependency 'RxSwift', '~> 3.6.1'
-s.dependency 'RxCocoa', '~> 3.6.1'
+s.dependency 'SDWebImage', '~> 4.0'
+s.dependency 'RxSwift', '~> 4.0'
+s.dependency 'RxCocoa', '~> 4.0'
 end
