@@ -13,35 +13,35 @@ import SDWebImage
 
 extension Reactive where Base: UIImageView {
     
-    public func imageURL(withPlaceholder placeholderImage: UIImage?, options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> UIBindingObserver<Base, URL?> {
-        return UIBindingObserver(UIElement: self.base, binding: { (imageView, url) in
+    public func imageURL(withPlaceholder placeholderImage: UIImage?, options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> Binder<URL?> {
+        return Binder(self.base) { imageView, url in
             imageView.sd_setImage(with: url, placeholderImage: placeholderImage, options: options, progress: progress, completed: nil)
-        })
+        }
     }
     
-    public var imageURL: UIBindingObserver<Base, URL?> {
+    public var imageURL: Binder<URL?> {
         return self.imageURL(withPlaceholder: nil)
     }
     
-    public func imageWithPreviousCachedImage(withPlaceholder placeholderImage: UIImage? = nil, options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> UIBindingObserver<Base, URL?> {
-        return UIBindingObserver(UIElement: self.base, binding: { (imageView, url) in
+    public func imageWithPreviousCachedImage(withPlaceholder placeholderImage: UIImage? = nil, options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> Binder<URL?> {
+        return Binder(self.base) { imageView, url in
             imageView.sd_setImageWithPreviousCachedImage(with: url, placeholderImage: placeholderImage, options: options, progress: progress, completed: nil)
-        })
+        }
     }
     
-    public var highlightedImage: UIBindingObserver<Base, URL?> {
+    public var highlightedImage: Binder<URL?> {
         return self.highlightedImage()
     }
     
-    public func highlightedImage(withOptions options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> UIBindingObserver<Base, URL?> {
-        return UIBindingObserver(UIElement: self.base, binding: { (imageView, url) in
+    public func highlightedImage(withOptions options: SDWebImageOptions = [], progress: SDWebImageDownloaderProgressBlock? = nil) -> Binder<URL?> {
+        return Binder(self.base) { (imageView, url) in
             imageView.sd_setHighlightedImage(with: url, options: options, progress: progress, completed: nil)
-        })
+        }
     }
     
-    public var animationImages: UIBindingObserver<Base, [URL]> {
-        return UIBindingObserver(UIElement: self.base, binding: { (imageView, urls) in
+    public var animationImages: Binder<[URL]> {
+        return Binder(self.base) { (imageView, urls) in
             imageView.sd_setAnimationImages(with: urls)
-        })
+        }
     }
 }
